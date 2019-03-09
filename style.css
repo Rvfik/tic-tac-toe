@@ -107,26 +107,19 @@ body {
 
 /* Tablet Styles */
 @media screen and (min-width: 541px) and (max-width: 960px) {
-    .game-board {   /*green*/
-        /* width: 100%; */
-    }
-
     body {          /*red*/
         width: ;
-    }
-
-    .box {
-
     }
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 961px) {
-    .game-board {   /*green*/
-        /* width: 49%; */
+@media screen and (min-width: 1550px) {
+    .game-board {
+        /*red*/
+        width: 40%;
     }
 
-    body {          /*red*/
-        /* width: 50%; */
+    .game-board--field {
+        width: 30%;
     }
 }
