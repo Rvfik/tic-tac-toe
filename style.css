@@ -1,0 +1,48 @@
+body {
+    padding: 20px;
+    background-image: linear-gradient(179.7deg, rgba(197, 214, 227, 1) 2.9%, rgba(144, 175, 202, 1) 97.1%);
+    border-color: red;
+    display: flex;
+    justify-content: center;
+
+    /* border: 1px;
+    border-style: solid;
+    border-color: red; */
+}
+
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 800px;
+    
+    /* border: 2px;
+    border-style: solid;
+    border-color: green; */
+}
+
+.game-board--field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22.56%;
+    margin: 10px;
+    background-image: radial-gradient(circle 1330px at -10.6% -10.3%, rgba(242, 198, 108, 1) 0%, rgba(239, 83, 36, 1) 92.8%, rgba(198, 75, 73, 1) 95%, rgba(244, 244, 244, 1) 100.2%);
+    cursor: pointer;
+    border-radius: 10%;
+
+    /* border: 3px;
+    border-style: solid;
+    border-color: blue; */
+}
+
+.game-board--field:hover {
+    background: darkgray;
+}
+
+.game-board--field:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
