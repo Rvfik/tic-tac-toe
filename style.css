@@ -17,7 +17,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 49%;
 
     /* border: 2px solid green; */
 }
@@ -121,12 +121,12 @@ body {
 }
 
 /* Desktop Styles */
-/* @media screen and (min-width: 961px) {
-    .game-board {
-        width: 800px;
+@media screen and (min-width: 961px) {
+    .game-board {   /*green*/
+        /* width: 49%; */
     }
 
-    body {
-        width: 800px;
+    body {          /*red*/
+        /* width: 50%; */
     }
-} */
+}
