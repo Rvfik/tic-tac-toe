@@ -1,7 +1,6 @@
 body {
     padding: 20px;
     background-image: linear-gradient(179.7deg, rgba(197, 214, 227, 1) 2.9%, rgba(144, 175, 202, 1) 97.1%);
-    /* background-color: rgba(144, 175, 202, 1); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,66 +59,26 @@ body {
 .reset {
     position: relative;
     justify-content: left;
-
-    /* border: 2px solid violet; */
 }
 
-/* Small Mobile Styles */
+/*Mobile Styles */
 @media screen and (max-width: 400px) {
     .game-board {
         width: 100%;
     }
-/* 
-    body {
-        width: 30%;
-    } */
-
-    .box {
-        width: 100%;
-    }
-
-    /* .btn {
-        width: 30%;
-        height: 30%;
-    } */
-
-}
-
-/* Big Mobile Styles */
-@media screen and (min-width: 401px) and (max-width: 540px) {
-    .game-board {   /*green*/
-        width: 80%;
-    }
-
-    body {          /*red*/
-        /* width: 100%; */
-    }
-
-    .box {          /*orange*/
-        width: 120%;
-    }
-
-    .reset {
-        width: 30%;
-        height: 30%;
-    }
 }
 
 /* Tablet Styles */
-@media screen and (min-width: 541px) and (max-width: 960px) {
-    body {          /*red*/
-        width: ;
+@media screen and (min-width: 401px) and (max-width: 540px) {
+    .game-board {
+        width: 80%;
     }
 }
+
 
 /* Desktop Styles */
 @media screen and (min-width: 1550px) {
     .game-board {
-        /*red*/
         width: 40%;
-    }
-
-    .game-board--field {
-        width: 30%;
     }
 }

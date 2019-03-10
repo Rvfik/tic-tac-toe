@@ -6,6 +6,8 @@ let player2 = 'X';
 
 let turn = 1; //numer kolejki
 
+let round = 1; //numer rundy
+
 let board = [
     '', '', '',
     '', '', '',
@@ -16,6 +18,8 @@ let gameEnabled = true; //czy gra nadal trwa
 
 const fields = [...document.querySelectorAll('.game-board--field')];
 fields.forEach(field => field.addEventListener('click', onFieldClick));
+
+document.getElementById("round").innerText(round)
 
 function onFieldClick(event) {
     if (!gameEnabled) {
@@ -68,13 +72,18 @@ function checkGameStatus(selectedPlayer) {
 }
 
 function winnerPlayer() {
-
+    if (selectedPlayer === player1) {
+        player1 = "A"
+    } else {
+        player2 = "B"
+    }
 }
 
 function endGame(selectedPlayer) {
     alert(`Gratulacje, wygrał gracz: ${selectedPlayer}`)
     gameEnabled = false;
 }
+
 
 function resetGameFields() {
     gameEnabled = true;
@@ -86,9 +95,12 @@ function resetGameFields() {
     ];
 
     turn = 1;
+    
+    round++;
 
     fields.forEach(field => {
         field.querySelector('.game-board--field-content').innerHTML = ''
     });
 }
+
 
