@@ -1,8 +1,7 @@
 "use strict";
 
-let player1 = 'O';
-let player2 = 'X';
-
+let player1 = '<img src="./cross.png">';
+let player2 = '<img src="./circle.png">';
 
 let turn = 1; //numer kolejki
 
@@ -21,8 +20,6 @@ let gameEnabled = true; //czy gra nadal trwa
 
 const fields = [...document.querySelectorAll('.game-board--field')];
 fields.forEach(field => field.addEventListener('click', onFieldClick));
-
-
 
 function onFieldClick(event) {
     if (!gameEnabled) {
@@ -77,9 +74,11 @@ function checkGameStatus(selectedPlayer) {
 
 function endGame(selectedPlayer) {
     alert(`Gratulacje, wygrał gracz: ${selectedPlayer}`)
+
+
     gameEnabled = false;
 
-    if (selectedPlayer === "O") {
+    if (selectedPlayer === player1) {
         winPlayer1++;
         document.getElementById("winnerPlayer1").innerText = `PLAYER1: ${winPlayer1}`;
     } else {
@@ -89,7 +88,6 @@ function endGame(selectedPlayer) {
 
     round++;
 }
-
 
 function resetGameFields() {
     gameEnabled = true;
