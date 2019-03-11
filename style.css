@@ -61,11 +61,48 @@ body {
     justify-content: left;
 }
 
+#round {
+    margin: 5px;
+    padding: 7px;
+    border-radius: 3px;
+    background-color: #02A676;
+    color: white;
+
+    /* border: 3px solid blue; */
+}
+
+#winnerPlayer1 {
+    margin-right: 5px;
+    padding: 7px;
+    border-radius: 3px;
+    background-color: #40798C;
+    color: white;
+
+    /* border: 3px solid blue; */
+}
+
+#winnerPlayer2 {
+    padding: 7px;
+    border-radius: 3px;
+    background-color: #70A9A1;
+    color: white;
+
+    /* border: 3px solid blue; */
+}
+
+.stats{
+    display: flex;
+    flex: wrap;
+}
+
+
 /*Mobile Styles */
 @media screen and (max-width: 400px) {
     .game-board {
         width: 100%;
     }
+
+  
 }
 
 /* Tablet Styles */
@@ -73,8 +110,9 @@ body {
     .game-board {
         width: 80%;
     }
-}
 
+
+}
 
 /* Desktop Styles */
 @media screen and (min-width: 1550px) {
