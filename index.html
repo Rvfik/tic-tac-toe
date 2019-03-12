@@ -1,62 +1,64 @@
 <!DOCTYPE html>
-<head>
-    <title>kółko krzyżyk</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <title>TIC-TAC-TOE</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
+
 <body>
 
-        <div id='form'>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Name player number one:</label>
-                <input type="text" class="form-control" id="namePlayer1" placeholder="Give a name">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Name player number two:</label>
-                <input type="text" class="form-control" id="namePlayer2" placeholder="Give a name">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Number of rounds:</label>
-                <input type="text" class="form-control" id="numRounds" placeholder="Give a number of rounds">
-            </div>
-            <button type="submit" class="btn btn-primary" onclick="changePage()">Submit</button>
+    <div id='form'>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name player number one:</label>
+            <input type="text" class="form-control" id="namePlayer1" placeholder="Give a name">
         </div>
-
-    
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name player number two:</label>
+            <input type="text" class="form-control" id="namePlayer2" placeholder="Give a name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Number of rounds:</label>
+            <input type="text" class="form-control" id="numRounds" placeholder="Give a number of rounds">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="setName(),changePage()">PLAY</button>
     </div>
 
-        <div class="box" id="box" style="display:none;">
-            <div class="game-board">
-                <div class="game-board--field" data-field="0">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="1">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="2">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="3">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="4">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="5">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="6">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="7">
-                    <div class="game-board--field-content"></div>
-                </div>
-                <div class="game-board--field" data-field="8">
-                    <div class="game-board--field-content"></div>
+
+    </div>
+
+    <div class="box" id="box" style="display: none">
+        <div class="game-board">
+            <div class="game-board--field" data-field="0">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="1">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="2">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="3">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="4">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="5">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="6">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="7">
+                <div class="game-board--field-content"></div>
+            </div>
+            <div class="game-board--field" data-field="8">
+                <div class="game-board--field-content"></div>
             </div>
 
             <div class="reset">
@@ -64,21 +66,19 @@
             </div>
             <div id="round">ROUND: 1</div>
             <div class="stats">
-                <div id="winnerPlayer1" >PLAYER1: 0</div>
+                <div id="winnerPlayer1">PLAYER1: 0</div>
                 <div id="winnerPlayer2">PLAYER2: 0</div>
             </div>
         </div>
     </div>
-    
+
     <script src="script.js"> </script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 </body>
+
 </html>

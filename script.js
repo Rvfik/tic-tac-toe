@@ -10,11 +10,23 @@ let round = 1; //numer rundy
 let winPlayer1 = 0; //liczba wygranych rund przez gracza Player1
 let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
 
+let name1;
+let name2;
+
+/*Podmiana formularza na diva z grą*/
 function changePage() {
     document.getElementById('form').style.display = "none";
     document.getElementById('box').style.display = "";
 }
 
+/*Pobranie i ustawienie imion z formularza*/
+function setName() {
+    name1 = document.getElementById("namePlayer1").value.toUpperCase();
+    document.getElementById("winnerPlayer1").innerHTML = `${name1}: ${winPlayer1}`;
+
+    name2 = document.getElementById("namePlayer2").value.toUpperCase();
+    document.getElementById("winnerPlayer2").innerHTML = `${name2}: ${winPlayer2}`;
+}
 
 let board = [
     '', '', '',
@@ -77,21 +89,20 @@ function checkGameStatus(selectedPlayer) {
     }
 }
 
-
 function endGame(selectedPlayer) {
-    alert(`Gratulacje, wygrał gracz: ${selectedPlayer}`)
 
-
-    gameEnabled = false;
 
     if (selectedPlayer === player1) {
         winPlayer1++;
-        document.getElementById("winnerPlayer1").innerText = `PLAYER1: ${winPlayer1}`;
+        document.getElementById("winnerPlayer1").innerText = `${name1}: ${winPlayer1}`;
+        alert(`Gratulacje, wygral gracz: ${name1}`)
     } else {
         winPlayer2++;
-        document.getElementById("winnerPlayer2").innerText = `PLAYER2: ${winPlayer2}`;
+        document.getElementById("winnerPlayer2").innerText = `${name2}: ${winPlayer2}`;
+        alert(`Gratulacje, wygral gracz: ${name2}`)
     }
 
+    gameEnabled = false;
     round++;
 }
 
