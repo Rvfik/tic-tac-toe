@@ -10,6 +10,12 @@ let round = 1; //numer rundy
 let winPlayer1 = 0; //liczba wygranych rund przez gracza Player1
 let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
 
+function changePage() {
+    document.getElementById('form').style.display = "none";
+    document.getElementById('box').style.display = "";
+}
+
+
 let board = [
     '', '', '',
     '', '', '',

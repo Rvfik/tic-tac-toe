@@ -9,8 +9,27 @@
 
 </head>
 <body>
+
+        <div id='form'>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name player number one:</label>
+                <input type="text" class="form-control" id="namePlayer1" placeholder="Give a name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name player number two:</label>
+                <input type="text" class="form-control" id="namePlayer2" placeholder="Give a name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Number of rounds:</label>
+                <input type="text" class="form-control" id="numRounds" placeholder="Give a number of rounds">
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="changePage()">Submit</button>
+        </div>
+
+    
     </div>
-        <div class="box">
+
+        <div class="box" id="box" style="display:none;">
             <div class="game-board">
                 <div class="game-board--field" data-field="0">
                     <div class="game-board--field-content"></div>
@@ -48,31 +67,7 @@
                 <div id="winnerPlayer1" >PLAYER1: 0</div>
                 <div id="winnerPlayer2">PLAYER2: 0</div>
             </div>
-            <!-- <button class="button" type="button" id="prompt">Okienko Prompt</button> -->
-
-            <!-- Button trigger modal -->
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Launch demo modal
-            </button> -->
-            
-            <!-- Modal -->
-            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body" id="body">
-                            Gratulacje, wygrał gracz: 
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
+        </div>
     </div>
     
     <script src="script.js"> </script>
