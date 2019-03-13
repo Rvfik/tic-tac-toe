@@ -1,7 +1,7 @@
 "use strict";
 
-let player1 = '<img src="./cross.png">';
-let player2 = '<img src="./circle.png">';
+let player1 = '<img src="./icons/cross.png">';
+let player2 = '<img src="./icons/circle.png">';
 
 let turn = 1; //numer kolejki
 
@@ -16,17 +16,15 @@ let name2;
 
 /*Podmiana formularza na diva z grą*/
 function changePage() {
-    document.getElementById('form').style.display = "none";
-    document.getElementById('box').style.display = "";
+    document.getElementById('form').style.display === "none" ?
+        document.getElementById('form').style.display = "" :
+        document.getElementById('form').style.display = "none";
+    document.getElementById('box').style.display === "" ?
+        document.getElementById('box').style.display = "none" :
+        document.getElementById('box').style.display = "";
 }
 
-/*Podmiana diva z grą na formularz*/
-function changePage2() {
-    document.getElementById('form').style.display = "";
-    document.getElementById('box').style.display = "none";
-}
-
-/*Pobranie i ustawienie imion z formularza*/
+/*Pobranie i ustawienie danych z formularza*/
 function setName() {
     name1 = document.getElementById("namePlayer1").value.toUpperCase();
     winPlayer1 = 0;
@@ -101,6 +99,7 @@ function checkGameStatus(selectedPlayer) {
             endRound(selectedPlayer);
         }
     }
+
 }
 
 function endRound(selectedPlayer) {
@@ -109,25 +108,33 @@ function endRound(selectedPlayer) {
         winPlayer1++;
         document.getElementById("winnerPlayer1").innerText = `${name1}: ${winPlayer1}`;
         alert(`Gratulacje, wygral gracz: ${name1}`)
-    } else {
+    } else if (selectedPlayer === player2) {
         winPlayer2++;
         document.getElementById("winnerPlayer2").innerText = `${name2}: ${winPlayer2}`;
         alert(`Gratulacje, wygral gracz: ${name2}`)
+        // } else {
+        //     winPlayer1++;
+        //     winPlayer2++;
+        //     document.getElementById("winnerPlayer1").innerText = `${name1}: ${winPlayer1}`;
+        //     document.getElementById("winnerPlayer2").innerText = `${name2}: ${winPlayer2}`;
+        //     alert(`Remis!`);
     }
-
     gameEnabled = false;
     round++;
+
+    resetGameFields()
+    endGame();
 }
 
-function endGame(round) {
+function endGame() {
 
     if (round > gameOver && winPlayer1 > winPlayer2) {
         alert(`Koniec gry, zwyciezca to: ${name1}`)
-        changePage2();
+        changePage();
         document.getElementById("numRounds").value = "";
     } else if (round > gameOver && winPlayer2 > winPlayer1) {
         alert(`Koniec gry, zwyciezca to: ${name2}`)
-        changePage2();
+        changePage();
         document.getElementById("numRounds").value = "";
     }
 }
@@ -144,10 +151,8 @@ function resetGameFields() {
     turn = 1;
 
     fields.forEach(field => {
-        field.querySelector('.game-board--field-content').innerHTML = ''
+        field.querySelector('.game-board--field-content').innerHTML = '';
     });
 
-    document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
-
-    endGame(round);
+    document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`;
 }
