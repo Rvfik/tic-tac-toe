@@ -6,6 +6,7 @@ let player2 = '<img src="./circle.png">';
 let turn = 1; //numer kolejki
 
 let round = 1; //numer rundy
+let gameOver;
 
 let winPlayer1 = 0; //liczba wygranych rund przez gracza Player1
 let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
@@ -19,6 +20,11 @@ function changePage() {
     document.getElementById('box').style.display = "";
 }
 
+function changePage2() {
+    document.getElementById('form').style.display = "";
+    document.getElementById('box').style.display = "none";
+}
+
 /*Pobranie i ustawienie imion z formularza*/
 function setName() {
     name1 = document.getElementById("namePlayer1").value.toUpperCase();
@@ -26,6 +32,10 @@ function setName() {
 
     name2 = document.getElementById("namePlayer2").value.toUpperCase();
     document.getElementById("winnerPlayer2").innerHTML = `${name2}: ${winPlayer2}`;
+
+    gameOver = document.getElementById("numRounds").value
+
+    document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
 }
 
 let board = [
@@ -63,7 +73,7 @@ function checkGameStatus(selectedPlayer) {
     for (let i = 0; i <= 6; i = i + 3) {
         if (!!board[i] && !!board[i + 1] && !!board[i + 2]) {
             if (board[i] === board[i + 1] && board[i + 1] === board[i + 2]) {
-                endGame(selectedPlayer);
+                endRound(selectedPlayer);
             }
         }
     }
@@ -71,26 +81,25 @@ function checkGameStatus(selectedPlayer) {
     for (let i = 0; i < 3; i++) {
         if (!!board[i] && !!board[i + 3] && !!board[i + 6]) {
             if (board[i] === board[i + 3] && board[i + 3] === board[i + 6]) {
-                endGame(selectedPlayer);
+                endRound(selectedPlayer);
             }
         }
     }
 
     if (!!board[0] && !!board[4] && !!board[8]) {
         if (board[0] === board[4] && board[4] === board[8]) {
-            endGame(selectedPlayer);
+            endRound(selectedPlayer);
         }
     }
 
     if (!!board[2] && !!board[4] && !!board[6]) {
         if (board[2] === board[4] && board[4] === board[6]) {
-            endGame(selectedPlayer);
+            endRound(selectedPlayer);
         }
     }
 }
 
-function endGame(selectedPlayer) {
-
+function endRound(selectedPlayer) {
 
     if (selectedPlayer === player1) {
         winPlayer1++;
@@ -104,6 +113,19 @@ function endGame(selectedPlayer) {
 
     gameEnabled = false;
     round++;
+}
+
+function endGame(round) {
+
+    if (round > gameOver && winPlayer1 > winPlayer2) {
+        alert(`Koniec gry, zwyciezca to: ${name1}`)
+        changePage2();
+        document.getElementById("numRounds").value = "";
+    } else if (round > gameOver && winPlayer2 > winPlayer1) {
+        alert(`Koniec gry, zwyciezca to: ${name2}`)
+        changePage2();
+        document.getElementById("numRounds").value = "";
+    }
 }
 
 function resetGameFields() {
@@ -121,5 +143,7 @@ function resetGameFields() {
         field.querySelector('.game-board--field-content').innerHTML = ''
     });
 
-    document.getElementById("round").innerText = `ROUND: ${round}`;
+    document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
+
+    endGame(round);
 }
