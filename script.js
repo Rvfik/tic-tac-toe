@@ -20,6 +20,7 @@ function changePage() {
     document.getElementById('box').style.display = "";
 }
 
+/*Podmiana diva z grą na formularz*/
 function changePage2() {
     document.getElementById('form').style.display = "";
     document.getElementById('box').style.display = "none";
@@ -28,13 +29,16 @@ function changePage2() {
 /*Pobranie i ustawienie imion z formularza*/
 function setName() {
     name1 = document.getElementById("namePlayer1").value.toUpperCase();
+    winPlayer1 = 0;
     document.getElementById("winnerPlayer1").innerHTML = `${name1}: ${winPlayer1}`;
 
     name2 = document.getElementById("namePlayer2").value.toUpperCase();
+    winPlayer2 = 0;
     document.getElementById("winnerPlayer2").innerHTML = `${name2}: ${winPlayer2}`;
 
     gameOver = document.getElementById("numRounds").value
 
+    round = 1;
     document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
 }
 

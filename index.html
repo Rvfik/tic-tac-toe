@@ -14,16 +14,16 @@
 
     <div id='form'>
         <div class="form-group">
-            <label for="exampleInputEmail1">Name player number one:</label>
+            <label for="formGroupExampleInput">Name player number one:</label>
             <input type="text" class="form-control" id="namePlayer1" placeholder="Give a name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Name player number two:</label>
+            <label for="formGroupExampleInput2">Name player number two:</label>
             <input type="text" class="form-control" id="namePlayer2" placeholder="Give a name">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Number of rounds:</label>
-            <input type="text" class="form-control" id="numRounds" placeholder="Give a number of rounds">
+            <label for="formGroupExampleInput3">Number of rounds:</label>
+            <input type="text" onkeypress="if(event.keyCode>57 || event.keyCode<48)return false"  class="form-control" id="numRounds" placeholder="Give a number of rounds">
         </div>
         <button type="submit" class="btn btn-primary" onclick="setName(),changePage()">PLAY</button>
     </div>
