@@ -100,7 +100,20 @@ function checkGameStatus(selectedPlayer) {
         }
     }
 
+    for (let i = 0; i <= 8; i++) {
+        if (!!board[i]) {
+            for (let i = 0; i <= 8; i++) {
+                if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '' && board[9] !== '') {
+                    draw();
+                }
+            }
+        }
+    }
 }
+
+// if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '' && board[9] !== '') {
+//     draw();
+// }
 
 function endRound(selectedPlayer) {
 
@@ -112,15 +125,18 @@ function endRound(selectedPlayer) {
         winPlayer2++;
         document.getElementById("winnerPlayer2").innerText = `${name2}: ${winPlayer2}`;
         alert(`Gratulacje, wygral gracz: ${name2}`)
-        // } else {
-        //     winPlayer1++;
-        //     winPlayer2++;
-        //     document.getElementById("winnerPlayer1").innerText = `${name1}: ${winPlayer1}`;
-        //     document.getElementById("winnerPlayer2").innerText = `${name2}: ${winPlayer2}`;
-        //     alert(`Remis!`);
     }
+
     gameEnabled = false;
     round++;
+
+    resetGameFields()
+    endGame();
+}
+
+function draw() {
+
+    alert(`Remis! runda od nowa`);
 
     resetGameFields()
     endGame();
