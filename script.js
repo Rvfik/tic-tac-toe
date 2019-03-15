@@ -28,7 +28,7 @@ fields.forEach(field => field.addEventListener('click', onFieldClick));
 /*Podmiana formularza na diva z grą*/
 function changePage() {
     document.getElementById('formName').style.display === "none" ?
-        document.getElementById('formName').style.display = "":
+        document.getElementById('formName').style.display = "" :
         document.getElementById('formName').style.display = "none";
     document.getElementById('box').style.display === "" ?
         document.getElementById('box').style.display = "none" :
@@ -106,11 +106,10 @@ function checkGameStatus(selectedPlayer) {
 
     for (let i = 0; i <= 8; i++) {
         if (!!board[i]) {
-            for (let i = 0; i <= 8; i++) {
-                if (board[0] !== '') {
-                    alert(`Remis! runda od nowa`);
-                    resetGameFields()
-                }
+            if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' &&
+                board[6] !== '' && board[7] !== '' && board[8] !== '' && board[9] !== '') {
+                alert(`Remis! runda od nowa`);
+                resetGameFields()
             }
         }
     }
@@ -152,6 +151,11 @@ ${name2}: ${winPlayer2}`)
         changePage();
         document.getElementById("numRounds").value = "";
     }
+}
+
+function draw() {
+    alert(`Remis! runda od nowa`);
+    resetGameFields()
 }
 
 function resetGameFields() {
