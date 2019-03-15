@@ -6,13 +6,16 @@ let player2 = '<img src="./icons/circle.png">';
 let turn = 1; //numer kolejki
 
 let round = 1; //numer rundy
-let gameOver;
+
 
 let winPlayer1 = 0; //liczba wygranych rund przez gracza Player1
 let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
 
+let gameOver;
+
 let name1;
 let name2;
+
 
 let board = [
     '', '', '',
@@ -45,7 +48,7 @@ function setName() {
     winPlayer2 = 0;
     document.getElementById("winnerPlayer2").innerHTML = `${name2}: ${winPlayer2}`;
 
-    gameOver = document.getElementById("numRounds").value
+    gameOver = document.getElementById("numRounds").value;
 
     round = 1;
     document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
@@ -108,7 +111,7 @@ function checkGameStatus(selectedPlayer) {
         if (!!board[i]) {
             if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' &&
                 board[6] !== '' && board[7] !== '' && board[8] !== '' && board[9] !== '') {
-                alert(`Remis! runda od nowa`);
+                alert(`Remis!`);
                 resetGameFields()
             }
         }
@@ -116,7 +119,6 @@ function checkGameStatus(selectedPlayer) {
 }
 
 function endRound(selectedPlayer) {
-
     if (selectedPlayer === player1) {
         winPlayer1++;
         document.getElementById("winnerPlayer1").innerText = `${name1}: ${winPlayer1}`;
@@ -135,27 +137,23 @@ function endRound(selectedPlayer) {
 }
 
 function endGame() {
-
     if (round > gameOver && winPlayer1 > winPlayer2) {
         alert(`Koniec gry, zwyciezca to: ${name1}
 
 ${name1}: ${winPlayer1}
 ${name2}: ${winPlayer2}`)
         changePage();
-        document.getElementById("numRounds").value = "";
+        document.getElementById("numRounds").value = "1";
+        gameOver = 0
     } else if (round > gameOver && winPlayer2 > winPlayer1) {
         alert(`Koniec gry, zwyciezca to: ${name2}
         
 ${name1}: ${winPlayer1}
 ${name2}: ${winPlayer2}`)
         changePage();
-        document.getElementById("numRounds").value = "";
+        document.getElementById("numRounds").value = "1";
+        gameOver = 0
     }
-}
-
-function draw() {
-    alert(`Remis! runda od nowa`);
-    resetGameFields()
 }
 
 function resetGameFields() {
