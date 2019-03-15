@@ -51,6 +51,8 @@ function setName() {
     document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
 
     alert(`Gre zaczyna: ${name2}`)
+
+    changePage()
 }
 
 function onFieldClick(event) {

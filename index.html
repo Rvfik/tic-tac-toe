@@ -21,12 +21,23 @@
             <label for="formGroupExampleInput2">Player two:</label>
             <input type="text" class="form-control" id="namePlayer2" placeholder="Name...">
         </div>
+
         <div class="form-group">
             <label for="formGroupExampleInput3">Number of rounds:</label>
-            <input type="text" onkeypress="if(event.keyCode>57 || event.keyCode<48)return false" class="form-control"
-                id="numRounds" placeholder="1,2,3,4...">
+            <select class="custom-select custom-select" id="numRounds">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="3">4</option>
+                <option value="3">5</option>
+                <option value="3">6</option>
+                <option value="3">7</option>
+                <option value="3">8</option>
+                <option value="3">9</option>
+                <option value="3">10</option>
+            </select>
         </div>
-        <button type="submit" class="btn btn-primary" onclick="setName(),changePage()">PLAY</button>
+        <button type="submit" class="btn btn-primary" onclick="setName()">PLAY</button>
     </div>
 
     <div class="box" id="box" style="display: none">
@@ -68,7 +79,7 @@
 
         </div>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -76,7 +87,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="script.js"> </script>
-    
+
 </body>
 
 </html>
