@@ -14,6 +14,17 @@ let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
 let name1;
 let name2;
 
+let board = [
+    '', '', '',
+    '', '', '',
+    '', '', '',
+];
+
+let gameEnabled = true; //czy gra nadal trwa
+
+const fields = [...document.querySelectorAll('.game-board--field')];
+fields.forEach(field => field.addEventListener('click', onFieldClick));
+
 /*Podmiana formularza na diva z grą*/
 function changePage() {
     document.getElementById('form').style.display === "none" ?
@@ -38,18 +49,9 @@ function setName() {
 
     round = 1;
     document.getElementById("round").innerHTML = `ROUND ${round} OF ${gameOver}`
+
+    alert(`Gre zaczyna: ${name2}`)
 }
-
-let board = [
-    '', '', '',
-    '', '', '',
-    '', '', '',
-];
-
-let gameEnabled = true; //czy gra nadal trwa
-
-const fields = [...document.querySelectorAll('.game-board--field')];
-fields.forEach(field => field.addEventListener('click', onFieldClick));
 
 function onFieldClick(event) {
     if (!gameEnabled) {
@@ -111,10 +113,6 @@ function checkGameStatus(selectedPlayer) {
     }
 }
 
-// if (board[0] !== '' && board[1] !== '' && board[2] !== '' && board[3] !== '' && board[4] !== '' && board[5] !== '' && board[6] !== '' && board[7] !== '' && board[8] !== '' && board[9] !== '') {
-//     draw();
-// }
-
 function endRound(selectedPlayer) {
 
     if (selectedPlayer === player1) {
@@ -135,11 +133,8 @@ function endRound(selectedPlayer) {
 }
 
 function draw() {
-
     alert(`Remis! runda od nowa`);
-
     resetGameFields()
-    endGame();
 }
 
 function endGame() {
