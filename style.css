@@ -10,7 +10,7 @@ body {
     /* border: 4px solid red; */
 }
 
-#form {
+#formName {
     padding: 15px;
     border: 1px solid gray;
     background: rgb(197, 210, 221);
@@ -73,7 +73,7 @@ body {
     margin: 5px;
     padding: 7px;
     border-radius: 3px;
-    background-color: #85B084;
+    background-color: #914B63;
     color: white;
 
     /* border: 3px solid blue; */
@@ -92,7 +92,7 @@ body {
 #winnerPlayer2 {
     padding: 7px;
     border-radius: 3px;
-    background-color: #70A9A1;
+    background-color: #5E8278;
     color: white;
 
     /* border: 3px solid blue; */
