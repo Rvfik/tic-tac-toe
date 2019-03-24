@@ -7,7 +7,6 @@ let turn = 1; //numer kolejki
 
 let round = 1; //numer rundy
 
-
 let winPlayer1 = 0; //liczba wygranych rund przez gracza Player1
 let winPlayer2 = 0; //liczba wygranych rund przez gracza Player1
 
